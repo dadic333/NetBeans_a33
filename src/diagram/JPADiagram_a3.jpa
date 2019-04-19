@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="moje.JpaEntity" epkg="DataLayer" v="5.2" rws="_15514307227102" Pws="_15514307227102" cws="_15514307227102" persistenceUnitName="Kabel01PU" pp="E" sm="false" xs="false" id="_15514307227101" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="TelExchangePK" abs="false" class="TelExchange" pclass="PBX" v="true" jbn="false" xre="false" m="false" rootElement="_15514307227101" id="_15514307432523">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>HWPositions</jpa:i>
+            <jpa:i>address</jpa:i>
+            <jpa:i>attribute4</jpa:i>
+            <jpa:i>attribute1</jpa:i>
+            <jpa:i>attribute3</jpa:i>
+            <jpa:i>attribute2</jpa:i>
+            <jpa:i>attribute</jpa:i>
+            <jpa:i>HWPosition</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" pname="attribute" id="_1554484843352909">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" length="60"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="building" pname="attribute" id="_1554718188829238">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="BUILDING" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="note" id="_155143142826333">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="150"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="outputCount" pname="attribute" id="_1553958252767931">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="OUTPUTCOUNT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1554010575494531" v="true" xvt="" name="HWPositions" id="_15545350748941777">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="TELECHANGE_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" pname="id1" id="_1554484921677914">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="TelExchange.findAll">
+            <jpa:query>Select e from TelExchange e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="TelExchange.findBycardNumber">
+            <jpa:query>Select u from TelExchange u where u.cardNumber=:cardNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="TelExchange.findByoutputNumber">
+            <jpa:query>Select u from TelExchange u where u.outputNumber=:outputNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="TelExchange.findByNote">
+            <jpa:query>Select u from TelExchange u where u.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByOutputCount">
+            <jpa:query>Select p from TelExchange p where p.outputCount=:outputCount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByName">
+            <jpa:query>Select t from TelExchange t where t.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByModel">
+            <jpa:query>Select t from TelExchange t where t.model=:model</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByFloor">
+            <jpa:query>Select t from TelExchange t where t.floor=:floor</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByDoorNumber">
+            <jpa:query>Select t from TelExchange t where t.doorNumber=:doorNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findBySocketName">
+            <jpa:query>Select t from TelExchange t where t.socketName=:socketName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByOther">
+            <jpa:query>Select t from TelExchange t where t.other=:other</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="TelExchange.findByBuilding">
+            <jpa:query>Select t from TelExchange t where t.building=:building</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="DataDevicePK" abs="false" class="DataDevice" pclass="Switch" v="true" jbn="false" xre="false" m="false" rootElement="_15514307227101" id="_1553170614409112">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>outputs</jpa:i>
+            <jpa:i>output</jpa:i>
+            <jpa:i>address</jpa:i>
+            <jpa:i>attribute4</jpa:i>
+            <jpa:i>devOutputs</jpa:i>
+            <jpa:i>attribute1</jpa:i>
+            <jpa:i>deviceOutputs</jpa:i>
+            <jpa:i>attribute3</jpa:i>
+            <jpa:i>attribute</jpa:i>
+            <jpa:i>attribute2</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" pname="attribute" id="_15544868405871080">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" length="60"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="building" pname="attribute" id="_1554718216189239">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="BUILDING" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="note" id="_1553170634885115">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="150"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="outputCount" pname="attribute" id="_1553958216066930">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="OUTPUTCOUNT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1554486220963954" v="true" xvt="" name="dataOutputs" pname="outputs" id="_15545351049871782">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="DEVICE_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" pname="id" id="_1554484964994915">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="DataDevice.findAll">
+            <jpa:query>Select e from DataDevice e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="DataDevice.findByNote">
+            <jpa:query>Select e from DataDevice e where e.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByOutputCount">
+            <jpa:query>Select s from DataDevice s where s.outputCount=:outputCount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByManufacturer">
+            <jpa:query>Select d from DataDevice d where d.manufacturer=:manufacturer</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByModel">
+            <jpa:query>Select d from DataDevice d where d.model=:model</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByFloor">
+            <jpa:query>Select d from DataDevice d where d.floor=:floor</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByDoorNumber">
+            <jpa:query>Select d from DataDevice d where d.doorNumber=:doorNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findBySocketName">
+            <jpa:query>Select d from DataDevice d where d.socketName=:socketName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByName">
+            <jpa:query>Select d from DataDevice d where d.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByOther">
+            <jpa:query>Select d from DataDevice d where d.other=:other</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataDevice.findByBuilding">
+            <jpa:query>Select d from DataDevice d where d.building=:building</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CableHeadPK" abs="false" class="CableHead" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15514307227101" id="_1553940484124526">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>outputs</jpa:i>
+            <jpa:i>output</jpa:i>
+            <jpa:i>address</jpa:i>
+            <jpa:i>devOutputs</jpa:i>
+            <jpa:i>deviceOutputs</jpa:i>
+            <jpa:i>cabel</jpa:i>
+            <jpa:i>attribute</jpa:i>
+            <jpa:i>cable</jpa:i>
+            <jpa:i>cableHeads</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" pname="attribute" id="_1554011604470548">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" length="60"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="building" pname="attribute" id="_1554718230267240">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="BUILDING" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="attribute2" id="_1553940534283531">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="150"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="outputCount" pname="attribute1" id="_1553940530546530">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="OUTPUTCOUNT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15545355548482270" v="true" xvt="" name="cabHeadOutputs" pname="cabHeadOutputs" id="_15545358484402286">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="CABLEHEAD_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" pname="id" id="_1553940484124527">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="CableHead.findAll">
+            <jpa:query>Select e from CableHead e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByCable_name">
+            <jpa:query>Select c from CableHead c where c.cable_name=:cable_name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByOutputCount">
+            <jpa:query>Select c from CableHead c where c.outputCount=:outputCount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByNote">
+            <jpa:query>Select c from CableHead c where c.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByName">
+            <jpa:query>Select c from CableHead c where c.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByTo">
+            <jpa:query>Select c from CableHead c where c.to=:to</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByOther">
+            <jpa:query>Select c from CableHead c where c.other=:other</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByCableName">
+            <jpa:query>Select c from CableHead c where c.cableName=:cableName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CableHead.findByBuilding">
+            <jpa:query>Select c from CableHead c where c.building=:building</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="HWPositionPK" abs="false" class="HWPosition" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15514307227101" id="_1554010575494531">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>phoneNumber</jpa:i>
+            <jpa:i>telExchange</jpa:i>
+            <jpa:i>attribute1</jpa:i>
+            <jpa:i>attribute</jpa:i>
+            <jpa:i>HWPosition</jpa:i>
+            <jpa:i>phoneNumbers</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" pname="attribute" id="_1554711120038118">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" length="10"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="TelExchangeOutput" pname="attribute2" id="_1554010597503536">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="TELEXCHANGEOUTPUT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="attribute3" id="_1554010599214537">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="char" v="true" xvt="" name="technologyType" pname="attribute" id="_1554713855656237">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="TECHNOLOGYTYPE" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="char" v="true" xvt="" name="phoneNumber" pname="attribute" id="_155470628873423">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="PHONENUMBER" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" pname="id" id="_1554010575510532">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="HWPosition.findAll">
+            <jpa:query>Select e from HWPosition e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByCardNumber">
+            <jpa:query>Select h from HWPosition h where h.cardNumber=:cardNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByCardOutputNumber">
+            <jpa:query>Select h from HWPosition h where h.cardOutputNumber=:cardOutputNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByTelExchangeOutput">
+            <jpa:query>Select h from HWPosition h where h.TelExchangeOutput=:TelExchangeOutput</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByNote">
+            <jpa:query>Select h from HWPosition h where h.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByAnalogOrDigital">
+            <jpa:query>Select h from HWPosition h where h.analogOrDigital=:analogOrDigital</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByPhoneNumber">
+            <jpa:query>Select h from HWPosition h where h.phoneNumber=:phoneNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByName">
+            <jpa:query>Select h from HWPosition h where h.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="HWPosition.findByTechnologyType">
+            <jpa:query>Select h from HWPosition h where h.technologyType=:technologyType</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="DataOutputPK" abs="false" class="DataOutput" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15514307227101" id="_1554486220963954">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>dataDevice</jpa:i>
+            <jpa:i>phoneNumber</jpa:i>
+            <jpa:i>cableHead</jpa:i>
+            <jpa:i>phoneNumbers</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="dataOut" pname="attribute" id="_1554486262695957">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="DATADEVOUT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="attribute1" id="_1554486263085958">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="phoneNumber" pname="attribute" id="_155470625539122">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="PHONENUMBER" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="mac" pname="attribute" id="_1554710564126117">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="MAC" unique="false" nullable="true" insertable="true" updatable="true" length="20"/>
+            </jpa:basic>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" pname="id" id="_1554486220963955">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="DataOutput.findAll">
+            <jpa:query>Select e from DataOutput e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Output.findByDataOut">
+            <jpa:query>Select d from DataOutput d where d.dataOut=:dataOut</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataOutput.findByNote">
+            <jpa:query>Select d from DataOutput d where d.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataOutput.findByPhoneNumber">
+            <jpa:query>Select d from DataOutput d where d.phoneNumber=:phoneNumber</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DataOutput.findByMac">
+            <jpa:query>Select d from DataOutput d where d.mac=:mac</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CabHeadOutputPK" abs="false" class="CabHeadOutput" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15514307227101" id="_15545355548482270">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>cableHead</jpa:i>
+            <jpa:i>phoneNumbers</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="cabHeadOut" pname="attribute" id="_15545355867472273">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="CABHEADOUT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="attribute1" id="_15545355873992274">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="phoneNumber" pname="attribute" id="_155470618996921">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="PHONENUMBER" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" pname="id" id="_15545355548482271">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="CabHeadOutput.findAll">
+            <jpa:query>Select e from CabHeadOutput e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CabHeadOutput.findByCabHeadOut">
+            <jpa:query>Select c from CabHeadOutput c where c.cabHeadOut=:cabHeadOut</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CabHeadOutput.findByNote">
+            <jpa:query>Select c from CabHeadOutput c where c.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CabHeadOutput.findByPhoneNumber">
+            <jpa:query>Select c from CabHeadOutput c where c.phoneNumber=:phoneNumber</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PBXPK" abs="false" class="PBX" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15514307227101" id="_1554718361464241">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" pname="attribute" id="_1554718377354244">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" length="60"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="building" pname="attribute1" id="_1554718378010245">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="BUILDING" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="attribute2" id="_1554718379494246">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="150"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="outputCount" pname="attribute3" id="_1554718380387247">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="OUTPUTCOUNT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1554718783406248" v="true" xvt="" name="pbxOutputs" id="_1554719084130255">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="PBX_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" id="_1554718361464242">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="PBX.findAll">
+            <jpa:query>Select e from PBX e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PBX.findByName">
+            <jpa:query>Select p from PBX p where p.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PBX.findByBuilding">
+            <jpa:query>Select p from PBX p where p.building=:building</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PBX.findByNote">
+            <jpa:query>Select p from PBX p where p.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PBX.findByOutputCount">
+            <jpa:query>Select p from PBX p where p.outputCount=:outputCount</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PbxOutputPK" abs="false" class="PbxOutput" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15514307227101" id="_1554718783406248">
+        <jpa:ath>Honza</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="PbxOut" pname="attribute" id="_1554718803469251">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="PBXOUT" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="note" pname="attribute1" id="_1554718805783252">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="NOTE" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="phoneNumber" pname="attribute2" id="_1554718812922253">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="PHONENUMBER" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" id="_1554718783406249">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="PbxOutput.findAll">
+            <jpa:query>Select e from PbxOutput e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PbxOutput.findByPbxOut">
+            <jpa:query>Select p from PbxOutput p where p.PbxOut=:PbxOut</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PbxOutput.findByNote">
+            <jpa:query>Select p from PbxOutput p where p.note=:note</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="PbxOutput.findByPhoneNumber">
+            <jpa:query>Select p from PbxOutput p where p.phoneNumber=:phoneNumber</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+        <db u="jdbc:derby://localhost:1527/a33" n="sa" p="sa" d="org.apache.derby.jdbc.ClientDriver"/>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15514307227102">
+            <i ref="_1553940484124526" x="963" y="142"/>
+            <i ref="_15514307432523" x="45" y="142"/>
+            <i ref="_1554486220963954" x="482" y="368"/>
+            <i ref="_1554718361464241" x="354" y="142"/>
+            <i ref="_15545355548482270" x="786" y="368"/>
+            <i ref="_1554010575494531" x="-109" y="368"/>
+            <i ref="_1554718783406248" x="206" y="368"/>
+            <i ref="_1553170614409112" x="634" y="142"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
